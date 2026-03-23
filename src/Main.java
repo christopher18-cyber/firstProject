@@ -3,14 +3,29 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter your name: ");
-        String name = scanner.nextLine();
+//        System.out.print("Enter your name: ");
+//        String name = scanner.nextLine();
+//        System.out.print("Enter your age: ");
+//        int age= scanner.nextInt();
+//        System.out.print("Enter your gpa: ");
+//        double gpa= scanner.nextDouble();
+//        System.out.print("Are you a student? (true/false)");
+//        boolean isStudent= scanner.nextBoolean();
+//        System.out.println("Your name is "+name+ " and you are "
+//                +age+" years old with a gpa of " +gpa);
+//        if(isStudent){
+//            System.out.println("You are enrolled as a student.");
+//        }else{
+//            System.out.println("You are NOT enrolled as a student.");
+
         System.out.print("Enter your age: ");
         int age= scanner.nextInt();
-        System.out.print("Enter your gpa: ");
-        double gpa= scanner.nextDouble();
-        System.out.println("Your name is "+name+ " and you are "
-                +age+" years old with a gpa of " +gpa);
+        scanner.nextLine();
+
+        System.out.print("Enter your name: ");
+        String name= scanner.nextLine();
+
+        System.out.println("You are "+name+ " and you are "+age+ " years old");
         scanner.close();
 
 
