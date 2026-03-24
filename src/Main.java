@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 //
 //public class Main {
 //    public static void main(String[] args){
@@ -82,23 +83,127 @@ import java.util.Scanner;
 //}
 
 
+//public class Main {
+//    public static void main(String[] args){
+//
+////        Arithmetic operators
+////        int x=10;
+////        int y=2;
+////
+////        int z;
+////        z=x+y;
+//
+////        Augmented assignment operators
+//
+//        int x=10;
+//        int y= 3;
+//
+//        x +=y;
+//
+//        System.out.println(x);
+//    }
+//}
+
+//
+//public class Main {
+//    public static void main(String[] args){
+////        SHOPPING CART PROGRAM
+//
+//        Scanner scanner=new Scanner(System.in);
+//        System.out.print("What item will you like to buy?: ");
+//        String item=scanner.nextLine();
+//        System.out.print("What is the price for each?: ");
+//        double price= scanner.nextDouble();
+//        scanner.nextLine();
+//        System.out.print("How many will you like to get?: ");
+//        int quantity= scanner.nextInt();
+//        scanner.nextLine();
+//
+//        double totalPrice=price*quantity;
+//
+//        System.out.println("You have bought "+quantity+ " "+item+"/s.");
+//        System.out.println("The total price is "+ totalPrice+".");
+//
+//
+//        scanner.close();
+//    }
+//}
+
+//public class Main {
+//    public static  void main(String[] args){
+////        IF STATEMENTS
+//
+//
+//
+//        Scanner scanner=new Scanner(System.in);
+//        String name;
+//        boolean isStudent;
+//        System.out.print("What is your name?: ");
+//        name= scanner.nextLine();
+//
+//        if(name.isEmpty()){
+//            System.out.println("Please enter a valid name.");
+//        }else{
+//            System.out.println("Hello "+name+"!");
+//        }
+//
+//
+//        System.out.print("What is your age?: ");
+//        int age= scanner.nextInt();
+//        scanner.nextLine();
+//
+//        System.out.println("Are you a student? (true/false): ");
+//;        isStudent=scanner.nextBoolean();
+//
+//
+////        int age=25;
+//        if(age > 18){
+//            System.out.println("You are an adult.");
+//        } else if (age<3) {
+//            System.out.println("You are still a kid.");
+//        } else{
+//            System.out.println("You are an underage.");
+//        }
+//
+//        if(isStudent){
+//            System.out.println("You are a student.");
+//        }else{
+//            System.out.println("You are not a student.");
+//        }
+//
+//        scanner.close();
+//    }
+//}
+
 public class Main {
     public static void main(String[] args){
+        Random random=new Random();
 
-//        Arithmetic operators
-//        int x=10;
-//        int y=2;
+        boolean isHead;
+
+        isHead= random.nextBoolean();
+        System.out.println(isHead);
+
+        if(isHead) {
+            System.out.println("HEAD");
+        }else{
+            System.out.println("TAIL");
+        }
+
+//        double number1;
 //
-//        int z;
-//        z=x+y;
+//        number1= random.nextDouble(1.0,99.0);
+//        System.out.println(number1);
 
-//        Augmented assignment operators
+//        int number1;
+//        int number2;
+//        int number3;
+//        number1= random.nextInt(1,7);
+//        System.out.println(number1);
+//        number2= random.nextInt(1,200);
+//        System.out.println(number2);
+//        number3=random.nextInt(1,8);
+//        System.out.println(number3);
 
-        int x=10;
-        int y= 3;
-
-        x +=y;
-
-        System.out.println(x);
     }
 }
