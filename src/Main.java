@@ -334,30 +334,66 @@ import java.util.Random;
 //        scanner.close();
 //    }
 //}
+//
+//public class Main {
+//    public static void main(String[] args){
+// nested if else statement
+//        boolean isStudent = false;
+//        boolean isSenior=true;
+//        double price=9.99;
+//
+//        if(isStudent){
+//            if(isSenior){
+//                System.out.println("You get a student discount of 10%.");
+//                System.out.println("You get a senior discount of 20%.");
+//                price *=0.70;
+//            }else{
+//                System.out.println("You get a student discount of 10%.");
+//                price *=0.90;
+//            }
+//        }else{
+//            if(isSenior){
+//                System.out.println("You get a senior discount of 20%.");
+//                price *=0.8;
+//            }else{
+//                price *=1;
+//            }
+//        }
+//        System.out.printf("You are to pay a ticket of price %.2f", price);
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        String methods
+//        String name="password";
+//        System.out.println(name.equals("password"));
+//        int length=name.length();
+//        System.out.println(length);
+//        char letter= name.charAt(2);
+//        int index=name.indexOf("o");
+//        int lastIndex=name.lastIndexOf("o");
+
+//        name=name.trim();
+
+//        name=name.toUpperCase();
+//        name=name.toLowerCase();
+//
+//
+//        name=name.replace("o","a");
+//        System.out.println(name.isEmpty());
+//        System.out.println(name);
+//
+//        if(name.contains(" ")){
+//            System.out.println("Your name contains space.");
+//        }else{
+//            System.out.println("Your name didn't contains space.");
+//        }
+//    }
+//}
 
 public class Main {
     public static void main(String[] args){
-        boolean isStudent = false;
-        boolean isSenior=true;
-        double price=9.99;
-
-        if(isStudent){
-            if(isSenior){
-                System.out.println("You get a student discount of 10%.");
-                System.out.println("You get a senior discount of 20%.");
-                price *=0.70;
-            }else{
-                System.out.println("You get a student discount of 10%.");
-                price *=0.90;
-            }
-        }else{
-            if(isSenior){
-                System.out.println("You get a senior discount of 20%.");
-                price *=0.8;
-            }else{
-                price *=1;
-            }
-        }
-        System.out.printf("You are to pay a ticket of price %.2f", price);
+//        substring methods
     }
 }
