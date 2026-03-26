@@ -131,7 +131,7 @@ import java.util.Random;
 
 //public class Main {
 //    public static  void main(String[] args){
-////        IF STATEMENTS
+////        IF ELSE STATEMENTS
 //
 //
 //
@@ -175,20 +175,21 @@ import java.util.Random;
 //    }
 //}
 
-public class Main {
-    public static void main(String[] args){
-        Random random=new Random();
-
-        boolean isHead;
-
-        isHead= random.nextBoolean();
-        System.out.println(isHead);
-
-        if(isHead) {
-            System.out.println("HEAD");
-        }else{
-            System.out.println("TAIL");
-        }
+//public class Main {
+//    public static void main(String[] args){
+//    random function
+//        Random random=new Random();
+//
+//        boolean isHead;
+//
+//        isHead= random.nextBoolean();
+//        System.out.println(isHead);
+//
+//        if(isHead) {
+//            System.out.println("HEAD");
+//        }else{
+//            System.out.println("TAIL");
+//        }
 
 //        double number1;
 //
@@ -205,5 +206,105 @@ public class Main {
 //        number3=random.nextInt(1,8);
 //        System.out.println(number3);
 
-    }
-}
+//    }
+//}
+
+
+//public class Main {
+//    public static void main(String[] args){
+//        Math class
+//        System.out.println(Math.PI);
+//        System.out.println(Math.E);
+//
+//        double result;
+//        result=Math.pow(2,5);
+//        result=Math.abs(-5);
+//        result=Math.sqrt(9);
+//        result=Math.round(4.2);
+//        result=Math.ceil(3.1);
+//        result=Math.floor(3.99);
+//        result=Math.max(10,20);
+//        result=Math.min(10,20);
+//        System.out.println(result);
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//    Scanner scanner=new Scanner(System.in);
+//    System.out.println("How old are you?: ");
+//    int age=scanner.nextInt();
+//    System.out.println(age);
+//
+//
+//    }
+//}
+
+//
+//public class Main {
+//    public static void main(String[] args){
+//        HYPOTENUSE
+//        Scanner scanner=new Scanner(System.in);
+//        double a;
+//        double b;
+//        double c;
+//
+//        System.out.println("Enter the length of side A: ");
+//        a=scanner.nextDouble();
+//        System.out.println("Enter the breadth of side B: ");
+//        b=scanner.nextDouble();
+//
+//        System.out.println(a);
+//        System.out.println(b);
+//
+//        c=Math.sqrt(Math.pow(a,2) + Math.pow(b,2));
+//        System.out.println(c);
+
+//        System.out.print("Enter the radius: ");
+//        double radius=scanner.nextDouble();
+//
+//        double area= (Math.PI)* (Math.pow(radius,2));
+//        System.out.println("The area is "+ area);
+//        double circumference= 2 * (Math.PI)* radius;
+//        System.out.println("The circumference is "+ circumference);
+//        double volume= (4.0/3.0) * Math.PI* Math.pow(radius,3);
+//        System.out.println("The volume is " + volume);
+//
+//        System.out.printf("The circumference is %.1fcm \n", circumference);
+//        System.out.printf("The area is %.1fcm2 \n", area);
+//        System.out.printf("The volume is %.1fcm3", volume);
+////        int age;
+//        String name;
+//        System.out.println("How old are you?: ");
+//        age = scanner.nextInt();
+//        scanner.nextLine();
+//        System.out.println("What is your name?: ");
+//        name=scanner.nextLine();
+//
+//        System.out.printf("My name is %s and I am %d years old.",name,age);
+
+//        scanner.close();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        Scanner scanner= new Scanner(System.in);
+//
+//        String name = "Christopher";
+//        char firstLetter = 'C';
+//        int age = 23;
+//        double height = 60000.5;
+//        boolean isEmployed = true;
+//
+//
+//        System.out.printf("Your name is %-10.3s",name);
+//        System.out.printf("Hello %s \n", name);
+//        System.out.printf("Your name starts with %c \n", firstLetter);
+//        System.out.printf("Your age is %d \n", age);
+//        System.out.printf("You are %,.1f \n", height);
+//        System.out.printf("Employed: %b \n", isEmployed);
+//        scanner.close();
+//    }
+//}
+
