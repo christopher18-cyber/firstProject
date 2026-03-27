@@ -392,8 +392,121 @@ import java.util.Random;
 //    }
 //}
 
+//public class Main {
+//    public static void main(String[] args){
+//        substring methods
+//
+//        Scanner scanner= new Scanner(System.in);
+//        System.out.print("Enter your email: ");
+//        String email=scanner.nextLine();
+//
+//        String email = "Bro123@gmail.com";
+//        String username= email.substring(0,email.indexOf("@"));
+//        String domain = email.substring(email.indexOf("@")+1);
+//        System.out.println(domain);
+//        System.out.println(username);
+//
+//        scanner.close();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        Weight converter program
+//
+//        Scanner scanner= new Scanner(System.in);
+//
+//        double weight;
+//        double newWeight;
+//        int choice;
+//        System.out.println("Weight conversion program");
+//        System.out.println("1: Convert lbs to kgs");
+//        System.out.println("2: Convert kgs to lbs");
+//        System.out.print("Choose an option: ");
+//        choice=scanner.nextInt();
+//        if(choice == 1){
+//            System.out.println("Enter your weight in lbs: ");
+//            weight= scanner.nextDouble();
+//            newWeight = weight * 0.45;
+//            System.out.printf("Your weight in kgs is %f", newWeight);
+//        }else if(choice ==2){
+//            System.out.println("Enter your weight in kgs: ");
+//            weight= scanner.nextDouble();
+//            newWeight = weight * 2.20462;
+//            System.out.printf("Your weight in lbs is %f", newWeight);
+//        }else{
+//            System.out.println("Enter a valid option pls");
+//        }
+//        scanner.nextLine();
+//        scanner.close();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        ternary operator
+
+//        int score=70;
+//
+//        String passOrFail= (score>=70)? "PASS":"FAIL";
+//        System.out.println(passOrFail);
+
+//        int number=5 ;
+//
+//        String evenOrOdd=(number%2==0)?"EVEN":"ODD";
+//        System.out.println(evenOrOdd);
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+////        Temperature conversion
+//
+//        Scanner scanner= new Scanner(System.in);
+//
+//        double temp;
+//        double newTemp;
+//        String unit;
+//
+//        System.out.println("Enter the temperature: ");
+//        temp=scanner.nextDouble();
+//        scanner.nextLine();
+//
+//        System.out.println("Convert to Fahrenheit? (C or F): ");
+//        unit=scanner.nextLine().toUpperCase();
+//
+//        System.out.println(temp);
+//        System.out.println(unit);
+//
+//        newTemp=(unit.equals("C"))? (temp - 32) *(5.0/9) : (temp + 32) *(9.0/5);
+//        System.out.println(newTemp);
+//        scanner.close();
+//    }
+//    }
+
+//public class Main {
+//    public static void main(String[] args){
+////        Enhanced switches
+//
+//        Scanner scanner=new Scanner(System.in);
+//
+//        String day;
+//        System.out.println("Enter a day: ");
+//        day = scanner.nextLine().toLowerCase();
+//
+//
+//        switch (day){
+//            case "monday", "tuesday", "wednesday", "thursday", "friday" -> System.out.println("It is a week day");
+//            case "saturday", "sunday" -> System.out.println("It is a weekend");
+//            default -> System.out.println("This isn't a valid day.");
+//        }
+//    }
+//}
+
 public class Main {
     public static void main(String[] args){
-//        substring methods
+        Scanner scanner=new Scanner(System.in);
+
+        scanner.close();
     }
 }
