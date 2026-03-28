@@ -503,10 +503,254 @@ import java.util.Random;
 //    }
 //}
 
+//public class Main {
+//    public static void main(String[] args){
+//    calculator program
+//        Scanner scanner=new Scanner(System.in);
+//
+//        double num1;
+//        double num2;
+//        char operator;
+//        double result = 0;
+//        boolean isValidOperator = true;
+//
+//        System.out.println("Enter the first number: ");
+//        num1= scanner.nextDouble();
+//
+//        System.out.print("Enter an operator (+, -, *, /. ^): ");
+//        operator =scanner.next().charAt(0);
+//
+//        System.out.println("Enter the second number: ");
+//        num2= scanner.nextDouble();
+//
+//        switch (operator){
+//            case '+' -> result = num1 + num2;
+//            case '-' -> result = num1 - num2;
+//            case '*' -> result = num1 * num2;
+//            case '/' -> {
+//                if(num2==0){
+//                    System.out.print("Cannot divide number by zero.");
+//                    isValidOperator=false;
+//                }else{
+//                    result = num1 / num2;
+//                }
+//            }
+//            case '^' -> result= Math.pow(num1,num2);
+//            default -> {
+//                System.out.println("Invalid operator");
+//                isValidOperator=false;
+//            }
+//        }
+//
+//        if(isValidOperator){
+//            System.out.print(result);
+//        }
+//
+//        scanner.close();
+//    }
+//}
+
+//
+//public class Main {
+//    public static void main(String[] args){
+// logical operator
+//        && = AND
+//        || = OR
+//        ! = NOT
+
+//        double temp=20;
+//
+//        if(temp<=30 && temp>0){
+//            System.out.println("The weather is good.");
+//        }else if(temp >30 || temp<0){
+//            System.out.println("The weather is bad.");
+//        }
+//
+//        Scanner scanner= new Scanner(System.in);
+//
+//
+//        String username;
+//
+//        System.out.println("Enter your username: ");
+//        username=scanner.nextLine();
+//        if(username.length() <4 || username.length() > 12){
+//            System.out.println("Username must be between 4-12 characters.");
+//        } else if (username.contains(" ") || username.contains("_")) {
+//            System.out.println("Username must not contain underscores or spaces.");
+//        } else {
+//            System.out.println("Welcome " + username);
+//        }
+//        System.out.println(username.indexOf("@"));
+//        scanner.close();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        While loops
+
+//        Scanner scanner=new Scanner(System.in);
+//
+//        String name="";
+//
+//        while (name.isEmpty()){
+//            System.out.println("Enter your name: ");
+//            name=scanner.nextLine();
+//        }
+
+//        String response= "";
+//
+//        while (!response.equals("Q")) {
+//            System.out.println("You are playing a game");
+//            System.out.println("Press Q to quit: ");
+//            response=scanner.next().toUpperCase();
+//        }
+//
+//        System.out.print("You have quit the game");
+//        System.out.println("Hello "+ name);
+
+//        int age=0;
+//        System.out.println("Enter your age: ");
+//        age=scanner.nextInt();
+//
+//        while (age < 0){
+//            System.out.println("Your age can't be negative.");
+//            System.out.println("Enter your age: ");
+//            age=scanner.nextInt();
+//        }//
+//        do {
+//            System.out.println("Your age can't be negative.");
+//            System.out.println("Enter your age: ");
+//            age=scanner.nextInt();
+//        }while (age < 0);
+
+//
+//        double number=0;
+//
+//        do {
+//            System.out.println("Enter a number between 1 - 10");
+//            number = scanner.nextInt();
+//        }while(number < 1 || number > 10);
+//        System.out.println("You picked "+ number);
+//        System.out.printf("You are %d years old",age);
+//        scanner.close();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+////        Number guessing game
+//
+//        Random random=new Random();
+//        Scanner scanner= new Scanner(System.in);
+//
+//        int guess;
+//        int attempts = 0;
+//
+//        int min=1;
+//        int max=100;
+//        int randomNumber=random.nextInt(min, max+1);
+//        System.out.println(randomNumber);
+//        System.out.println("Number guessing game");
+//        System.out.println("Enter a number between 1 - 100: ");
+//
+//        do{
+//            System.out.println("Guess a number: ");
+//            guess=scanner.nextInt();
+//            attempts++;
+//
+//            if(guess<randomNumber){
+//                System.out.println("Too Low, Try again.");
+//            } else if (guess>randomNumber) {
+//                System.out.println("Too high, Try again");
+//            }else{
+//                System.out.println("You have won, you tried it in "+attempts);
+//            }
+//        }while (guess != randomNumber);
+//
+//
+//
+//    }
+//}
+//
+//public class Main {
+//    public static void main(String[] args) throws InterruptedException{
+//        for loop
+
+//        for (int i=0; i<10; i--){
+//            System.out.println("Pizza");
+//        }
+
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("How many times do you want to loop?: ");
+//        int max= scanner.nextInt();
+//
+//        for (int i=0; i<max ;i++){
+//            System.out.println(i);
+//        }
+
+//        scanner.close();
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("How many seconds do you want to countdown?: ");
+//        int start= scanner.nextInt();
+//
+//        for (int i = start; i>0; i--){
+//            System.out.println(i);
+//            Thread.sleep(1000);
+//        }
+//        System.out.println("HAPPY NEW YEAR");
+//
+//        scanner.close();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        break and continue
+//
+//        for (int i=0; i<10; i++){
+//            if(i==5){
+//                continue;
+//            }
+//            System.out.print(i + " ");
+//        }
+//    }
+//}
+
+
 public class Main {
     public static void main(String[] args){
+
+//        for (int j = 0; j <=2 ; j++) {
+//            for(int i = 1; i<=9; i++ ){
+//                System.out.print(i + " ");
+//            }
+//            System.out.println();
+//        }
+
         Scanner scanner=new Scanner(System.in);
 
+        int rows;
+        int columns;
+        char symbols;
+
+        System.out.println("Enter the numbers of rows: ");
+        rows=scanner.nextInt();
+
+        System.out.println("Enter the numbers of columns: ");
+        columns=scanner.nextInt();
+
+        System.out.println("Enter the symbol to use: ");
+        symbols=scanner.next().charAt(0);
+
+        for (int i = 0; i < rows ; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print(symbols);
+            }
+            System.out.println();
+
+        }
         scanner.close();
     }
 }
