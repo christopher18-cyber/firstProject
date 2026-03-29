@@ -718,9 +718,9 @@ import java.util.Random;
 //    }
 //}
 
-
-public class Main {
-    public static void main(String[] args){
+//
+//public class Main {
+//    public static void main(String[] args){
 
 //        for (int j = 0; j <=2 ; j++) {
 //            for(int i = 1; i<=9; i++ ){
@@ -729,28 +729,244 @@ public class Main {
 //            System.out.println();
 //        }
 
-        Scanner scanner=new Scanner(System.in);
+//        Scanner scanner=new Scanner(System.in);
+//
+//        int rows;
+//        int columns;
+//        char symbols;
+//
+//        System.out.println("Enter the numbers of rows: ");
+//        rows=scanner.nextInt();
+//
+//        System.out.println("Enter the numbers of columns: ");
+//        columns=scanner.nextInt();
+//
+//        System.out.println("Enter the symbol to use: ");
+//        symbols=scanner.next().charAt(0);
+//
+//        for (int i = 0; i < rows ; i++) {
+//            for (int j = 0; j < columns; j++) {
+//                System.out.print(symbols);
+//            }
+//            System.out.println();
+//
+//        }
+//        scanner.close();
+//    }
+//}
 
-        int rows;
-        int columns;
-        char symbols;
 
-        System.out.println("Enter the numbers of rows: ");
-        rows=scanner.nextInt();
+//public class Main {
+//    public static void main(String[] args){
 
-        System.out.println("Enter the numbers of columns: ");
-        columns=scanner.nextInt();
+//        methods
+//        int age=15;
+//        String name = "Christopher";
+//        happyBirthday(name,age);
 
-        System.out.println("Enter the symbol to use: ");
-        symbols=scanner.next().charAt(0);
+//        double result=square(2.0);
+//        System.out.println(result);
+//        double result2=cube(2);
+//        System.out.println(result2);
+//        String fullName= getFullName("Ayo","Chris");
+//        System.out.println(checkAge(19));
+//    }
+//    static void happyBirthday(String name,int age){
+//        System.out.println("Happy birthday to you");
+//        System.out.printf("Happy birthday dear %s\n",name);
+//        System.out.printf("You are %d years old\n",age);
+//        System.out.println("Happy birthday to you");
+//    }
+//    static double square(double number){ return number * number; }
+//    static double cube(double number){
+//        return number * number * number;
+//    }
+//    static String getFullName(String first, String last){
+//        return first + " " + last;
+//    }
+//
+//    static boolean checkAge(int age){
+//        return age >= 18;
+//    }
+//}
 
-        for (int i = 0; i < rows ; i++) {
-            for (int j = 0; j < columns; j++) {
-                System.out.print(symbols);
+//public class Main {
+//    public static void main(String[] args){
+//        Overloaded methods
+//        System.out.println(add(1,3));
+//        System.out.println(add(2,2,1));
+//    }
+//
+//    static double add(double num1, double num2){
+//        return num1 + num2;
+//    }
+//    static double add(double num1, double num2, double num3){
+//        return num1 + num2 + num3;
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//
+//        int x=10;
+//    }
+//}
+
+//public class Main {
+//    static Scanner scanner= new Scanner(System.in);
+//
+//    public static void main(String[] args){
+//
+////        JAVA BANK PROGRAM
+//
+//
+//        boolean isRunning=true;
+//        double balance=10.99;
+//        int choice;
+//
+//        while (isRunning){
+//            System.out.println("*************");
+//            System.out.println("BANKING PROGRAM");
+//            System.out.println("*************");
+//            System.out.println("1. Show Balance");
+//            System.out.println("2. Deposit");
+//            System.out.println("3. Withdraw");
+//            System.out.println("4. Exit");
+//            System.out.println("*************");
+//
+//            System.out.print("Enter your choice (1-4): ");
+//            choice=scanner.nextInt();
+//
+//            switch (choice){
+//                case 1 -> showBalance(balance);
+//                case 2 -> balance=balance+deposit();
+//                case 3 -> balance=balance-withdraw(balance);
+//                case 4 -> isRunning=false;
+//                default -> System.out.println("INVALID CHOICE");
+//            }
+//
+//        }
+//        scanner.close();
+//    }
+//
+//    static void showBalance(double balance){
+//        System.out.printf("$%.2f\n",balance);
+//    }
+//
+//    static double deposit(){
+//        double amount;
+//        System.out.print("How much do you want to deposit?: ");
+//        amount=scanner.nextDouble();
+//        if(amount < 0){
+//            return 0;
+//        }else{
+//            return amount;
+//        }
+//    }
+//
+//    static double withdraw(double balance){
+//        double amount;
+//        System.out.println("How much you want to withdraw?: ");
+//        amount=scanner.nextDouble();
+//        if(amount>balance){
+//            System.out.print("You can withdraw amount greater than your balance.");
+//            return 0;
+//        }else if(amount<0){
+//            System.out.println("Amount can't be negative.");
+//            return 0;
+//        }else{
+//            return amount;
+//        }
+//    }
+//}
+
+public class Main {
+    public static void main(String[] args){
+//        JAVA DICE ROLLER PROGRAM
+
+        Scanner scanner= new Scanner(System.in);
+        Random random = new Random();
+        int numOfDice;
+        int total=0;
+
+        System.out.print("Enter the number of dice to roll: ");
+        numOfDice=scanner.nextInt();
+
+        if(numOfDice > 0){
+
+            for(int i=0; i< numOfDice; i++){
+                int roll = random.nextInt(1,7);
+                printDie(roll);
+                System.out.println("You rolled "+ roll);
+                total = total + roll;
             }
-            System.out.println();
-
+            System.out.println("Total: "+ total);
+        }else{
+            System.out.println("The number of dice must be greater than 0");
         }
+
         scanner.close();
+    }
+
+    static void printDie(int roll){
+        String dice1 = """
+                 -------
+                |       |
+                |   •   |
+                |       |
+                 -------
+                """;
+
+
+        String dice2 = """
+                 -------
+                | •     |
+                |       |
+                |     • |
+                 -------
+                """;
+
+        String dice3 = """
+                 -------
+                | •     |
+                |   •   |
+                |     • |
+                 -------
+                """;
+
+        String dice4 = """
+                 -------
+                | •   • |
+                |       |
+                | •   • |
+                 -------
+                """;
+
+        String dice5 = """
+                 -------
+                | •   • |
+                |   •   |
+                | •   • |
+                 -------
+                """;
+
+        String dice6 = """
+                 -------
+                | •   • |
+                | •   • |
+                | •   • |
+                 -------
+                """;
+
+        switch (roll){
+            case 1 -> System.out.println(dice1);
+            case 2 -> System.out.println(dice2);
+            case 3 -> System.out.println(dice3);
+            case 4 -> System.out.println(dice4);
+            case 5 -> System.out.println(dice5);
+            case 6 -> System.out.println(dice6);
+            default -> System.out.println("Invalid roll");
+//            case 1 -> System.out.println(dice1);
+        }
     }
 }
