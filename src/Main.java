@@ -2,6 +2,7 @@ import java.util.Locale;
 import java.util.Scanner;
 import java.util.Random;
 import java.util.Arrays;
+import java.util.ArrayList;
 //
 //public class Main {
 //    public static void main(String[] args){
@@ -1318,3 +1319,297 @@ import java.util.Arrays;
 //        return 0;
 //    }
 //}
+
+//public class Main {
+//  public static void main(String[] args){
+//      Object oriented programming
+//      Car car = new Car();
+//      System.out.println(car.isRunning);
+//      car.start();
+//      System.out.println(car.isRunning);
+//      car.stop();
+//      System.out.println(car.isRunning);
+//      System.out.println(car.isRunning);
+//      System.out.println(car.model);
+//      System.out.println(car.price);
+//      System.out.println(car.make);
+//      System.out.println(car.year);
+//      car.stop();
+//
+//  }
+//}
+//
+//
+//public class Main {
+//    public static void main(String[] args){
+////        constructors
+//        Student student1 = new Student("Chris",23, 4.5);
+//        Student student2 = new Student("Salami",23, 4.9);
+//
+//        System.out.println(student1.name);
+//        System.out.println(student2.name);
+//        student1.study();
+//        student2.study();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        overloaded constructors
+//        User user1 = new User("Pop");
+//        User user2 = new User("Ayo","Ayo@gmail.com");
+//        User user3 = new User("Emmanuel","emmanuel@gmail.com",23);
+//
+//        System.out.println(user1.username);
+//        System.out.println(user1.email);
+//        System.out.println(user1.age);
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        array of objects
+//
+//        Car car1 = new Car("Ford","red");
+//        Car car2 = new Car("Benz","Pink");
+//        Car car3 = new Car("Mercedes","orange");
+//
+//        Car[] cars = {car1, car2, car3};
+//
+//        for(Car car: cars){
+//            car.color="black";
+//        }
+//
+//        for(Car car: cars){
+//            car.drive();
+//        }
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+////        static
+//
+//        Friend friend1 = new Friend("SpongeBob");
+//        Friend friend2 = new Friend("Chris");
+//        Friend friend3 = new Friend("Charles");
+//
+//        System.out.println(friend1.name);
+//        System.out.println(friend2.name);
+//
+//        System.out.println(Friend.numOfFriends);
+//        Friend.showFriends();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        Inheritance
+//
+//        Dog dog1 = new Dog();
+//
+//        System.out.println(dog1.isAlive);
+//        dog1.eat();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        super
+//        Person person = new Person("Tom","Riddle");
+//        Student student = new Student("Chris","Ayo",4.52);
+//        Employee employee = new Employee("Chris","Ayomide",350000);
+//        person.showName();
+//        student.showName();
+//        student.showGPA();
+//        employee.showSalary();
+//
+//
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        method overriding
+//
+//        Cat cat = new Cat();
+//        Dog dog = new Dog();
+//        Fish fish = new Fish();
+//
+//        fish.move();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        to string method
+//
+//        Car car= new Car("Ford","Mustang",2004,"red");
+//        System.out.println(car);
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        abstraction
+//
+//        Triangle triangle = new Triangle(4,4);
+//        Circle circle = new Circle(7);
+//        Rectangle rectangle = new Rectangle(4,4);
+//
+//        System.out.println(triangle.area());
+//        System.out.println(circle.area());
+//        System.out.println(rectangle.area());
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        interface
+//        Rabbit rabbit = new Rabbit();
+//        Hawk hawk =  new Hawk();
+//        rabbit.flee();
+//        hawk.hunt();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        polymorphism
+//
+//        Car car = new Car();
+//        Bike bike = new Bike();
+//        Boat boat = new Boat();
+//
+//        car.go();
+//        bike.go();
+//        boat.go();
+//
+//        Vehicle[] vehicles = {car,bike,boat};
+//        Vehicle a1 = new Bike();
+//        a1.go();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        polymorphism runtime
+//
+//        Scanner scanner = new Scanner(System.in);
+//        Animal animal;
+//        int choice;
+//
+//        System.out.print("Would you like a dog or a cat?: ");
+//        choice= scanner.nextInt();
+//        scanner.nextLine();
+//        if(choice == 1){
+//            animal = new Dog();
+//            animal.speak();
+//        } else if (choice == 2) {
+//            animal = new Cat();
+//            animal.speak();
+//        }else{
+//            System.out.println("Invalid choice.");
+//        }
+//        scanner.close();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        getters and setters
+//
+//        Car car = new Car("charger","yellow", 10000);
+//
+//        car.setPrice(-20000);
+//        car.setColor("pink");
+//        System.out.println(car.getModel() + " " +car.getColor() +" "+ car.getPrice());
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+////        Aggregation
+//        Book book1 = new Book("The fellow of the ring",354);
+//        Book book2 = new Book("The tall tower",343);
+//        Book book3 = new Book("The lord's temple",264);
+//
+//        Book[] books={book1, book2, book3};
+//        Library library = new Library("HOL", 1960,books);
+//
+//        for(Book book:books){
+//            System.out.println(book.displayInfo());
+//        }
+//
+//        library.displayInfo();
+//    }
+//}
+
+//
+//public class Main {
+//    public static void main(String[] args){
+//        composition
+//        Car car = new Car(2025,"ford","V8");
+//        System.out.println(car.year);
+//        System.out.println(car.model);
+//        System.out.println(car.engine.type);;
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+////        wrapper classes
+//
+////        Integer a= 123;
+////        Double b= 12.3;
+////        Character c = '$';
+////        Boolean d = true;
+////
+////        int x =a;
+//
+////        String a = Integer.toString(124);
+////        String b = Double.toString(90.9);
+////        String c = Character.toString('@');
+////        String d = Boolean.toString(true);
+////
+////        String x = a + b + c + d;
+//
+//        int a = Integer.parseInt("123");
+//        double b = Double.parseDouble("3.14");
+//        char c = "Pizza".charAt(0);
+//        boolean d = Boolean.parseBoolean("true");
+//
+//        char letter = 'A';
+//        System.out.println(Character.isLetter(letter));
+//        System.out.println(Character.isUpperCase(letter));
+//    }
+//}
+
+
+public class Main {
+    public static void main(String[] args){
+//        ArrayList
+//        ArrayList<Integer> list = new ArrayList<>();
+//        list.add(3);
+//        list.add(2);
+//        list.add(5);
+//        list.add(5);
+//        System.out.println(list);
+
+//        ArrayList<Double> list = new ArrayList<>();
+//
+//        list.add(3.2);
+//        list.add(2.1);
+//
+//        System.out.println(list);
+
+        ArrayList<String> list = new ArrayList<>();
+        list.add("3");
+        list.add("worm");
+        list.add("lope");
+
+        list.set(0,"pop");
+        list.remove(0);
+        System.out.println(list);
+    }
+}
