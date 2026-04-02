@@ -1,8 +1,10 @@
-import java.util.Locale;
-import java.util.Scanner;
-import java.util.Random;
-import java.util.Arrays;
-import java.util.ArrayList;
+import javax.sound.sampled.*;
+import java.io.*;
+import java.util.*;
+import java.util.Collections;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
 //
 //public class Main {
 //    public static void main(String[] args){
@@ -1586,8 +1588,8 @@ import java.util.ArrayList;
 //}
 
 
-public class Main {
-    public static void main(String[] args){
+//public class Main {
+//    public static void main(String[] args){
 //        ArrayList
 //        ArrayList<Integer> list = new ArrayList<>();
 //        list.add(3);
@@ -1602,14 +1604,246 @@ public class Main {
 //        list.add(2.1);
 //
 //        System.out.println(list);
+//
+//        ArrayList<String> list = new ArrayList<>();
+//        list.add("3");
+//        list.add("worm");
+//        list.add("lope");
+//
+//        list.set(0,"pop");
+//        list.remove(0);
+//        System.out.println(list);
+//        System.out.println(list.size());
+//
+//        Collections.sort(list);
+//        System.out.println(list);
+//
+//        Scanner scanner = new Scanner(System.in);
+//
+//        ArrayList<String> foods = new ArrayList<>();
+//        System.out.println("Enter the number of foods, you want to store");
+//        int numOfFood = scanner.nextInt();
+//        scanner.nextLine();
+//
+//
+//        for(int i =1; i<= numOfFood; i++){
+//            System.out.println("Enter food #"+ i+": ");
+//            String food= scanner.nextLine();
+//            foods.add(food);
+//        }
+//
+//        System.out.println(foods);
+//
+//        scanner.close();
+//    }
+//}
 
-        ArrayList<String> list = new ArrayList<>();
-        list.add("3");
-        list.add("worm");
-        list.add("lope");
+//public class Main {
+//    public static void main(String[] args){
+//        exception handling
+//
+//        Scanner scanner = new Scanner(System.in);
+//        try {
+//            System.out.println("Enter a number: ");
+//            int number= scanner.nextInt();
+//            System.out.println(number);
+//        }catch (ArithmeticException e){
+//            System.out.println("YOU CAN'T DIVIDE BY ZERO, IDIOT.");
+//        }catch (InputMismatchException e){
+//            System.out.println("THIS IS NOT A NUMBER");
+//        }catch (Exception e){
+//            System.out.println("Something went wrong.");
+//        }finally {
+//            scanner.close();
+//            System.out.println("This always executes.");
+//        }
+//
+//        scanner.close();
+//    }
+//}
 
-        list.set(0,"pop");
-        list.remove(0);
-        System.out.println(list);
+//public class Main {
+//    public static void main(String[] args){
+//        write files
+
+//        How to write files using java popular options
+//        FileWriter = Good for small or medium-sized text files
+//        BufferWriter = Better performance for large amount of text
+//        PrintWriter = Best for structured data, like reports or log
+//        FileOutputStream = Best for binary files (e.g, images, audio files)
+//
+//        try(FileWriter writer = new FileWriter("test.txt")){
+//            writer.write("I love pizza");
+//            System.out.println("File has been written");
+//        }catch (IOException e){
+//            System.out.println("Could not write file.");
+//        }
+//    }
+//}
+
+
+//public class Main {
+//    public static void main(String[] args){
+//        read file
+//        BufferedReader + FileReader: Best for reading text files line by line/
+//        FileInputStream: Best for binary files (image, audio)
+//        RandomAccessFile: Best for read/ write specific portions of a large file
+//
+//        String filePath = "C:\\Users\\Rokib\\OneDrive\\Desktop\\file.txt";
+//        try(BufferedReader reader = new BufferedReader(new FileReader(filePath))){
+//
+//            String line;
+//            while ((line = reader.readLine()) != null){
+//                System.out.println(line);
+//            }
+//            System.out.println("That file exists.");
+//        }catch (FileNotFoundException e){
+//            System.out.println("Could not find file.");
+//        }catch (IOException e){
+//            System.out.println("Something went wrong.");
+//        }
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        HOW TO PLAY AUDIO with JAVA
+//
+//        String filePath = "src\\song.wav";
+//        File file = new File(filePath);
+//
+//        try(Scanner scanner = new Scanner(System.in);
+//             AudioInputStream audioStream = AudioSystem.getAudioInputStream(file)){
+//
+//            Clip clip = AudioSystem.getClip();
+//            clip.open(audioStream);
+//
+//            String response = "";
+//            while (!response.equals("Q")){
+//                System.out.println("P = Play");
+//                System.out.println("S = Stop");
+//                System.out.println("Q = Quit");
+//                System.out.println("R = Restart");
+//                System.out.println("Enter your choice: ");
+//                response= scanner.nextLine().toUpperCase();
+//
+//                switch (response){
+//                    case "P" -> clip.start();
+//                    case "S" -> clip.stop();
+//                    case "R" -> clip.setMicrosecondPosition(0);
+//                    case "Q" -> clip.close();
+//                    default -> System.out.println("Invalid choice");
+//                }
+//            }
+//
+//        }
+//        catch (FileNotFoundException e){
+//            System.out.println("Could not locate file.");
+//        }
+//        catch (LineUnavailableException e){
+//            System.out.println("Unable to access audio resource");
+//        }
+//        catch (UnsupportedAudioFileException e){
+//            System.out.println("Audio file is not supported.");
+//        }catch (IOException e){
+//            System.out.println("Something went wrong.");
+//        }finally {
+//            System.out.println("Bye.");
+//        }
+//    }
+//}
+
+
+public class Main {
+    public static void main(String[] args){
+//        HANGMAN GAME
+
+        String word = "watermelon";
+        int wrongGuess = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        ArrayList<Character> wordState = new ArrayList<>();
+
+        for (int i = 0; i< word.length(); i++){
+            wordState.add('_');
+        }
+        System.out.println("***********************");
+        System.out.println("Welcome to JAVA HANGMAN");
+        System.out.println("***********************");
+
+        while(wrongGuess< 6){
+
+            System.out.print("Word: ");
+            for(char c: wordState){
+                System.out.print(c+" ");
+            }
+            System.out.println();
+
+            System.out.print("Guess a letter: ");
+            char guess = scanner.next().toLowerCase().charAt(0);
+
+            if(word.indexOf(guess) >= 0){
+                System.out.println("Correct guess!\n");
+
+                for(int i =0;i <word.length(); i++){
+                    if(word.charAt(i) == guess){
+                        wordState.set(i, guess);
+                    }
+                }
+            }else{
+                System.out.print("Wrong guess.");
+                wrongGuess++;
+            }
+
+        }
+        scanner.close();
+    }
+    static String getHangManArt(int wrongGuess){
+        return switch (wrongGuess){
+          case 0 -> """
+                  
+                  
+                  
+                  """;
+          case 1 -> """
+                  O
+                  
+                  """;
+          case 2 -> """
+                  O
+                  |
+                  """;
+
+          case 3 -> """
+                   O
+                  /|
+                  """;
+
+          case 4 -> """
+                  O
+                 /|\\
+                 \s""";
+
+
+            case 5 -> """
+                  O
+                 /|\\
+                  |
+                 \s""";
+
+            case 6 -> """
+                  O
+                 /|\\
+                  |\\
+                  \s""";
+
+            case 7 -> """
+                  O
+                 /|\\
+                 /|\\
+                  \s""";
+
+          default -> "";
+        };
     }
 }
