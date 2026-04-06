@@ -1,5 +1,10 @@
 import javax.sound.sampled.*;
 import java.io.*;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.Collections;
 import java.io.BufferedReader;
@@ -1704,10 +1709,12 @@ import java.io.FileNotFoundException;
 //        }
 //    }
 //}
+//
+
 
 //public class Main {
 //    public static void main(String[] args){
-//        HOW TO PLAY AUDIO with JAVA
+////        HOW TO PLAY AUDIO with JAVA
 //
 //        String filePath = "src\\song.wav";
 //        File file = new File(filePath);
@@ -1753,97 +1760,286 @@ import java.io.FileNotFoundException;
 //    }
 //}
 
+//
+//public class Main {
+//    public static void main(String[] args){
+////        HANGMAN GAME
+//       String filePath = "words.txt";
+//       ArrayList<String> words= new ArrayList<>();
+//
+//       try(BufferedReader reader = new BufferedReader(new FileReader(filePath))){
+//           String line;
+//           while ((line = reader.readLine()) != null){
+//               words.add(line.trim());
+//           }
+//       }catch (FileNotFoundException e){
+//           System.out.println("File is not found.");
+//       }catch (IOException e){
+//           System.out.println("Something went wrong.");
+//       }
+//
+//       System.out.println(words);
+//
+//       Random random = new Random();
+//
+//       String word = words.get(random.nextInt(words.size()));
+//
+//
+////        String word = "watermelon";
+//        int wrongGuess = 0;
+//        Scanner scanner = new Scanner(System.in);
+//
+//        ArrayList<Character> wordState = new ArrayList<>();
+//
+//        for (int i = 0; i< word.length(); i++){
+//            wordState.add('_');
+//        }
+//        System.out.println("***********************");
+//        System.out.println("Welcome to JAVA HANGMAN");
+//        System.out.println("***********************");
+//
+//        while(wrongGuess< 6){
+//
+//            System.out.print("Word: ");
+//            for(char c: wordState){
+//                System.out.print(c+" ");
+//            }
+//            System.out.println();
+//
+//            System.out.print("Guess a letter: ");
+//            char guess = scanner.next().toLowerCase().charAt(0);
+//
+//            if(word.indexOf(guess) >= 0){
+//                System.out.println("Correct guess!\n");
+//
+//                for(int i =0;i <word.length(); i++){
+//                    if(word.charAt(i) == guess){
+//                        wordState.set(i, guess);
+//                    }
+//                }
+//                if(!wordState.contains('_')){
+//                    System.out.println(getHangManArt(wrongGuess));
+//                    System.out.println("YOU WIN");
+//                    System.out.println("The word was "+word);
+//                    break;
+//                }
+//            }else{
+//                System.out.println("Wrong guess.");
+//                wrongGuess++;
+//            }
+//
+//        }
+//
+//        if(wrongGuess>=6){
+//            System.out.println(getHangManArt(wrongGuess));
+//            System.out.println("GAME OVER.");
+//            System.out.println("The word was "+word);
+//        }
+//        scanner.close();
+//    }
+//    static String getHangManArt(int wrongGuess){
+//        return switch (wrongGuess){
+//          case 0 -> """
+//
+//
+//
+//                  """;
+//          case 1 -> """
+//                  O
+//
+//                  """;
+//          case 2 -> """
+//                  O
+//                  |
+//                  """;
+//
+//          case 3 -> """
+//                   O
+//                  /|
+//                  """;
+//
+//          case 4 -> """
+//                  O
+//                 /|\\
+//                 \s""";
+//
+//
+//            case 5 -> """
+//                  O
+//                 /|\\
+//                  |
+//                 \s""";
+//
+//            case 6 -> """
+//                  O
+//                 /|\\
+//                 /|\\
+//                  \s""";
+//
+//            case 7 -> """
+//                  O
+//                 /|\\
+//                 /|\\
+//                  \s""";
+//
+//          default -> "";
+//        };
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args) {
+//        WORK WITH DATE AND TIME
+//        LocalDate localDate = LocalDate.now();
+//        System.out.println(localDate);
+//        LocalTime time = LocalTime.now();
+//        System.out.println(time);
+//        LocalDateTime localDateTime = LocalDateTime.now();
+//        System.out.println(localDateTime);
+//        Instant instant = Instant.now();
+//        System.out.println(instant);
+
+//        Custom format
+//        LocalDateTime localDateTime = LocalDateTime.now();
+//
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+//        String newDateTime = localDateTime.format(formatter);
+//        System.out.println(newDateTime);
+//
+//        LocalDateTime date1 = LocalDateTime.of(2024,12,25, 12,0,0);
+//        LocalDateTime date2 = LocalDateTime.of(2025, 1, 1, 3,0,0);
+//
+//        if(date1.isBefore(date2)){
+//            System.out.println("Date 1 is earlier than Date 2.");
+//        } else if (date1.isAfter(date2)) {
+//            System.out.println("Date 2 is earlier than Date 1");
+//        }else{
+//            System.out.println("They are equal.");
+//        }
+//
+//
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//
+//        Anonymous classes
+//
+//        Dog dog1 = new Dog();
+//        Dog dog2 = new Dog(){
+//            @Override
+//            void speak() {
+//                System.out.println("Scooby Doo says Ruh Roh.");
+//            }
+//        };
+//
+//        dog1.speak();
+//        dog2.speak();
+//    }
+//}
+
+
+//public class Main {
+//    public static void main(String[] args){
+//        timer : a class that schedule tasks at specific times or periodically
+//        timerTask: task that will be executed by the timer
+//
+//        Timer timer = new Timer();
+//        TimerTask task= new TimerTask() {
+//
+//            int count = 3;
+//            @Override
+//            public void run() {
+//                System.out.println("Hello!");
+//                count--;
+//                if(count<=0){
+//                    timer.cancel();
+//                }
+//            }
+//        };
+//        timer.schedule(task, 50,1000);
+//    }
+//}
+
+//
+//public class Main {
+//    public static void main(String[] args){
+//        JAVA COUNTDOWN TIMER PROGRAM
+//
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.println("Enter # of seconds to count down: ");
+//        int response = scanner.nextInt();
+//        scanner.nextLine();
+//
+//        Timer timer = new Timer();
+//        TimerTask task = new TimerTask() {
+//
+//            int count = response;
+//            @Override
+//            public void run() {
+//                System.out.println(count);
+//                count--;
+//                if(count <= 0){
+//                    System.out.println("Happy New Year");
+//                    timer.cancel();
+//                }
+//            }
+//        };
+//
+//        timer.schedule(task, 2000, 1000);
+//
+//        scanner.close();
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args){
+//        Generics : A concept where you can write class which is compatible with many data types
+
+//        Box<Double> box = new Box<>();
+//
+//        box.setItem(3.14);
+//        System.out.println(box.getItem());
+
+//        Product<String,Double> product = new Product<>("apple",50.0);
+//
+//        System.out.println(product.getItem());
+//        System.out.println(product.getPrice());
+//    }
+//}
+
 
 public class Main {
     public static void main(String[] args){
-//        HANGMAN GAME
+//        HashMap: A data structure that stores key-value pairs, key will be unique
+//        but values can be duplicated
 
-        String word = "watermelon";
-        int wrongGuess = 0;
-        Scanner scanner = new Scanner(System.in);
+        HashMap<String,Double> map = new HashMap<>();
+        map.put("apple", 0.5);
+        map.put("orange",2.5);
+        map.put("lime", 9.50);
+        map.put("banana",5.50);
 
-        ArrayList<Character> wordState = new ArrayList<>();
+        System.out.println(map.get("apple"));
 
-        for (int i = 0; i< word.length(); i++){
-            wordState.add('_');
+        System.out.println(map);
+        System.out.println(map.containsKey("banana"));
+
+        System.out.println(map.containsValue(2.00));
+
+        if(map.containsKey("apple")){
+            System.out.println(map.get("apple"));
+        }else{
+            System.out.println("Key not found.");
         }
-        System.out.println("***********************");
-        System.out.println("Welcome to JAVA HANGMAN");
-        System.out.println("***********************");
 
-        while(wrongGuess< 6){
+        System.out.println(map.size());
 
-            System.out.print("Word: ");
-            for(char c: wordState){
-                System.out.print(c+" ");
-            }
-            System.out.println();
 
-            System.out.print("Guess a letter: ");
-            char guess = scanner.next().toLowerCase().charAt(0);
-
-            if(word.indexOf(guess) >= 0){
-                System.out.println("Correct guess!\n");
-
-                for(int i =0;i <word.length(); i++){
-                    if(word.charAt(i) == guess){
-                        wordState.set(i, guess);
-                    }
-                }
-            }else{
-                System.out.print("Wrong guess.");
-                wrongGuess++;
-            }
-
+        for(String key: map.keySet()){
+            System.out.println(key+ ":"+map.get(key));
         }
-        scanner.close();
-    }
-    static String getHangManArt(int wrongGuess){
-        return switch (wrongGuess){
-          case 0 -> """
-                  
-                  
-                  
-                  """;
-          case 1 -> """
-                  O
-                  
-                  """;
-          case 2 -> """
-                  O
-                  |
-                  """;
-
-          case 3 -> """
-                   O
-                  /|
-                  """;
-
-          case 4 -> """
-                  O
-                 /|\\
-                 \s""";
-
-
-            case 5 -> """
-                  O
-                 /|\\
-                  |
-                 \s""";
-
-            case 6 -> """
-                  O
-                 /|\\
-                  |\\
-                  \s""";
-
-            case 7 -> """
-                  O
-                 /|\\
-                 /|\\
-                  \s""";
-
-          default -> "";
-        };
     }
 }
