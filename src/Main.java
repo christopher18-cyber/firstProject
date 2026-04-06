@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 import java.util.Collections;
 import java.io.BufferedReader;
@@ -2011,35 +2012,136 @@ import java.io.FileNotFoundException;
 //}
 
 
-public class Main {
-    public static void main(String[] args){
+//public class Main {
+//    public static void main(String[] args){
 //        HashMap: A data structure that stores key-value pairs, key will be unique
 //        but values can be duplicated
+//
+//        HashMap<String,Double> map = new HashMap<>();
+//        map.put("apple", 0.5);
+//        map.put("orange",2.5);
+//        map.put("lime", 9.50);
+//        map.put("banana",5.50);
+//
+//        System.out.println(map.get("apple"));
+//
+//        System.out.println(map);
+//        System.out.println(map.containsKey("banana"));
+//
+//        System.out.println(map.containsValue(2.00));
+//
+//        if(map.containsKey("apple")){
+//            System.out.println(map.get("apple"));
+//        }else{
+//            System.out.println("Key not found.");
+//        }
+//
+//        System.out.println(map.size());
+//
+//
+//        for(String key: map.keySet()){
+//            System.out.println(key+ ":"+map.get(key));
+//        }
+//    }
+//}
 
-        HashMap<String,Double> map = new HashMap<>();
-        map.put("apple", 0.5);
-        map.put("orange",2.5);
-        map.put("lime", 9.50);
-        map.put("banana",5.50);
+//public class Main {
+//    public static void main(String[] args){
+//        enum is a kind of class that represents a fixed set of constants
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Enter a day of the week");
+//        String response = scanner.nextLine().toUpperCase();
+//
+//        try {
+//            Day day = Day.valueOf(response);
+//
+//            switch (day){
+//                case MONDAY,
+//                     TUESDAY,
+//                     WEDNESDAY,
+//                     THURSDAY,
+//                     FRIDAY-> System.out.println("It is a weekday.");
+//                case SATURDAY, SUNDAY -> System.out.println("It is a weekend.");
+//            }
+//
+//        }catch (IllegalArgumentException e){
+//            System.out.println("Please enter a valid day.");
+//        }
+//        scanner.close();
+//    }
+//}
 
-        System.out.println(map.get("apple"));
+//public class Main {
+//    public static void main(String[] args){
+////        Threading: this helps to run tasks simultaneously, help improve performance
+////        HOW TO CREATE THREAD
+////        1 : Extend the Thread class
+////        2 : Implement the Runnable interface
+//
+//
+//        Scanner scanner = new Scanner(System.in);
+//
+//        MyRunnable myRunnable = new MyRunnable();
+//        Thread thread = new Thread(myRunnable);
+//        thread.setDaemon(true);
+//        thread.start();
+//        System.out.println("You have 5 seconds to enter your name");
+//        System.out.print("Enter your name: ");
+//        String name = scanner.nextLine();
+//        System.out.println("Hello "+ name);
+//
+//
+//        scanner.close();
+//    }
+//}
 
-        System.out.println(map);
-        System.out.println(map.containsKey("banana"));
+//public class Main {
+//    public static void main(String[] args){
+//        Multithreading: enables a program to run multiple thread concurrently
+//        (Thread) a set of instructions that runs independently
+//
+//        MyRunnable myRunnable = new MyRunnable();
+//        Thread thread1 = new Thread(new MyRunnable("PING"));
+//        Thread thread2 = new Thread(new MyRunnable("PONG"));
+//
+//        System.out.println("GAME START");
+//        thread1.start();
+//        thread2.start();
+//
+//        try{
+//            thread1.join();
+//            thread2.join();
+//        }catch(InterruptedException e){
+//            System.out.println("Main thread was interrupted.");
+//        }
+//        System.out.println("GAME OVER");
+//    }
+//}
 
-        System.out.println(map.containsValue(2.00));
+public class Main {
+    public static void main(String[] args){
+//        JAVA ALARM CLOCK
+        Scanner scanner = new Scanner(System.in);
+        DateTimeFormatter formatter= DateTimeFormatter.ofPattern("HH:mm:ss");
+        LocalTime alarmTime = null;
+        String filePath= "src\\song.wav";
 
-        if(map.containsKey("apple")){
-            System.out.println(map.get("apple"));
-        }else{
-            System.out.println("Key not found.");
+        while(alarmTime == null){
+            try{
+                System.out.print("ENTER AN ALARM TIME (HH:MM:SS): ");
+                String inputTime = scanner.nextLine();
+
+                alarmTime = LocalTime.parse(inputTime,formatter);
+                System.out.println("Alarm set for "+ alarmTime);
+            }catch(DateTimeParseException e){
+                System.out.println("Invalid format, pls use HH:MM:SS");
+            }
+
         }
 
-        System.out.println(map.size());
-
-
-        for(String key: map.keySet()){
-            System.out.println(key+ ":"+map.get(key));
-        }
+        AlarmClock alarmClock = new AlarmClock(alarmTime,filePath,scanner);
+        Thread alarmThread = new Thread(alarmClock);
+        alarmThread.start();
     }
 }
